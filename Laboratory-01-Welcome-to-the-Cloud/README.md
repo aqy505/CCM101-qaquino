@@ -2,7 +2,7 @@
 
 ## Mission Overview
 
-This laboratory activity introduces the basic skills and practices needed when working with cloud-based Linux environments. It covers accessing a Linux environment through KillerCoda, exploring the Linux operating system, gathering system information, organizing files and directories, and creating a professional GitHub portfolio. The activity also introduces Markdown documentation and version-controlled work as part of a cloud computing workflow.
+This laboratory activity introduces the basic skills and practices needed when working with cloud-based Linux environments. It covers accessing a Linux environment through KillerCoda, exploring the Linux operating system, gathering system information, organizing files and directories, and creating a professional GitHub portfolio. The activity also introduces Markdown documentation and version controlled work as part of a cloud computing workflow.
 
 ## Objectives
 
