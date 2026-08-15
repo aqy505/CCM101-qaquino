@@ -1,4 +1,4 @@
-# Mission 1: Welcome to the Cloud
+# Mission 1: Welcome to the Cloud 
 
 ## Mission Overview
 
