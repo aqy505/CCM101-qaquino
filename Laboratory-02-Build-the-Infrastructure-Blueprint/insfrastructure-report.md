@@ -97,7 +97,6 @@ Command used: `df -h`
 
 Command used: `mount | column -t`
 
-*(Full raw output captured in the screenshot below.)*
 
 ---
 
