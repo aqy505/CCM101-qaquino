@@ -1,60 +1,71 @@
 # Infrastructure Report
 
-## Overview
-
-This report documents the technical specifications of the Linux server
-provisioned through the KillerCoda Playground, as part of the Cloud
-Infrastructure Assessment for CloudNova Technologies.
-
----
-
-## System Summary
+## Operating System
 
 | Attribute | Value |
 |---|---|
-| Operating System | Ubuntu 24.04.4 LTS (Noble Numbat) |
+| Name | Ubuntu |
+| Version | 24.04.4 LTS (Noble Numbat) |
+| ID | ubuntu |
+| ID Like | debian |
+
+Command used: `cat /etc/os-release`
+
+---
+
+## Kernel Version
+
+| Attribute | Value |
+|---|---|
 | Kernel Version | 6.8.0-138-generic |
-| Hostname | ubuntu |
-| IP Address | 172.30.1.2 (internal), 172.17.0.1 |
-| Architecture | x86_64 |
+
+Command used: `uname -r`
 
 ---
 
-## CPU Information
+## CPU Model
 
 | Attribute | Value |
 |---|---|
-| CPU Model | Intel Xeon E312xx (Sandy Bridge, IBRS update) |
+| Architecture | x86_64 |
+| Model Name | Intel Xeon E312xx (Sandy Bridge, IBRS update) |
 | Vendor | GenuineIntel |
-| Number of CPU Cores | 1 |
-| Threads per Core | 1 |
-| Core(s) per Socket | 1 |
-| Socket(s) | 1 |
-| Clock Speed | ~2.0 GHz (BogoMIPS: 7008.00) |
-| Virtualization | KVM (Full virtualization) |
-| L1d Cache | 32 KiB |
-| L1i Cache | 32 KiB |
+| Virtualization | KVM (full virtualization) |
+| L1d / L1i Cache | 32 KiB each |
 | L2 Cache | 4 MiB |
 | L3 Cache | 16 MiB |
 
-> **Note:** This is a virtualized CPU (running under KVM), which is typical
-> for cloud/sandbox environments like KillerCoda — the underlying physical
-> hardware is shared and abstracted away from the user.
+Command used: `lscpu`
 
 ---
 
-## Memory (RAM)
+## Number of CPU Cores
 
-| Type | Total | Used | Free | Buff/Cache | Available |
-|---|---|---|---|---|---|
-| Memory | 1.9 Gi | 414 Mi | 837 Mi | 820 Mi | 1.5 Gi |
-| Swap | 1.0 Gi | 0 B | 1.0 Gi | — | — |
+| Attribute | Value |
+|---|---|
+| CPU(s) | 1 |
+| Core(s) per socket | 1 |
+| Thread(s) per core | 1 |
+| Socket(s) | 1 |
+
+Command used: `nproc` and `lscpu`
+
+---
+
+## Total RAM
+
+| Type | Total | Used | Free | Available |
+|---|---|---|---|---|
+| Mem | 1.9 Gi | 414 Mi | 837 Mi | 1.5 Gi |
+| Swap | 1.0 Gi | 0 B | 1.0 Gi | — |
+
+Command used: `free -h`
 
 ---
 
 ## Disk Capacity
 
-| Filesystem | Size | Used | Available | Use% | Mounted on |
+| Filesystem | Size | Used | Available | Use % | Mounted On |
 |---|---|---|---|---|---|
 | tmpfs | 191M | 996K | 190M | 1% | /run |
 | /dev/vda1 | 19G | 5.4G | 13G | 30% | / |
@@ -63,40 +74,47 @@ Infrastructure Assessment for CloudNova Technologies.
 | /dev/vda16 | 881M | 117M | 703M | 15% | /boot |
 | /dev/vda15 | 105M | 6.2M | 99M | 6% | /boot/efi |
 
-**Main storage disk:** `/dev/vda1` — 19GB total, 30% used, mounted as the
-root filesystem (`/`).
+Command used: `df -h`
 
 ---
 
 ## Mounted File Systems
 
-| Mount Point | Device/Source | Filesystem Type | Notes |
-|---|---|---|---|
-| `/` | /dev/vda1 | ext4 | Root filesystem — main OS storage |
-| `/boot` | /dev/vda16 | ext4 | Boot files |
-| `/boot/efi` | /dev/vda15 | vfat | EFI system partition |
-| `/dev/shm` | tmpfs | tmpfs | Shared memory (RAM-backed) |
-| `/run` | tmpfs | tmpfs | Runtime data (RAM-backed) |
-| `/sys`, `/proc` | sysfs, proc | virtual | Kernel/system interfaces (not real storage) |
+| Device / Source | Mount Point | Type |
+|---|---|---|
+| /dev/vda1 | / | ext4 |
+| /dev/vda16 | /boot | ext4 |
+| /dev/vda15 | /boot/efi | vfat |
+| tmpfs | /dev/shm | tmpfs |
+| tmpfs | /run | tmpfs |
+| tmpfs | /run/lock | tmpfs |
+| proc | /proc | proc |
+| sysfs | /sys | sysfs |
+| udev | /dev | devtmpfs |
+| cgroup2 | /sys/fs/cgroup | cgroup2 |
+| securityfs | /sys/kernel/security | securityfs |
+| debugfs | /sys/kernel/debug | debugfs |
 
-> Only `/`, `/boot`, and `/boot/efi` are actual disk-backed filesystems.
-> The `tmpfs`/`sysfs`/`proc` entries are virtual filesystems that live in
-> RAM or are kernel interfaces — they don't use physical disk space.
+Command used: `mount | column -t`
 
----
-
-## Screenshots
-
-![Server Information](screenshots/server-information.png)
-![Network Information](screenshots/network-information.png)
-![Storage Information](screenshots/storage-information.png)
+*(Full raw output captured in the screenshot below.)*
 
 ---
 
-## Summary
+## Hostname
 
-The server is a single-core Ubuntu 24.04 LTS instance running on KVM
-virtualization, with 1.9GB of RAM and 19GB of primary disk storage (13GB
-available). This matches the typical footprint of a lightweight cloud
-sandbox instance — enough resources to run basic services and demonstrate
-core Linux/cloud concepts, but not intended for production workloads.
+| Attribute | Value |
+|---|---|
+| Hostname | ubuntu |
+
+Command used: `hostname`
+
+---
+
+## IP Address
+
+| Attribute | Value |
+|---|---|
+| IP Address(es) | 172.30.1.2, 172.17.0.1 |
+
+Command used: `hostname -I`
