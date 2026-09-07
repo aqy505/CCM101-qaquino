@@ -1,0 +1,11 @@
+# Mission Reflection
+
+Among the three cloud platforms, Amazon Web Services (AWS) impressed me the most because of the wide range of services it provides. AWS can support different needs, from simple applications and storage to large systems used by global companies. I also found its scalability useful because resources can be adjusted depending on the needs of a business.
+
+AWS, Microsoft Azure, and Google Cloud Platform have many similarities even though they have different service names and strengths. All three provide important cloud services such as virtual machines, storage, networking, databases, identity management, and Kubernetes. They also provide scalable resources that organizations can use without having to maintain all the physical infrastructure themselves.
+
+Business requirements have a big influence on choosing the right cloud platform because every organization has different needs, budgets, and existing technologies. For example, Azure can be suitable for organizations that already use Microsoft products, while GCP can be a good choice for AI and machine learning projects. AWS can be useful for businesses that need a wide range of services and expect their systems to grow over time.
+
+Acting as a Cloud Solutions Consultant helped me understand that choosing a cloud provider is not only about selecting the most popular platform. It is important to understand the client's situation first and determine what services can meet their requirements. This activity also helped me practice comparing different platforms and recommending solutions based on actual business scenarios.
+
+After completing this mission, my GitHub Cloud Computing Portfolio became more organized and informative. It now includes research about AWS, Azure, and GCP, platform comparisons, client recommendations, decision matrices, Linux investigation results, and screenshots. I also improved my skills in using Markdown, organizing files, documenting technical activities, and updating my work on GitHub.
