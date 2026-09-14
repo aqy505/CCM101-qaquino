@@ -1,0 +1,11 @@
+# Mission Reflection
+
+Docker containers are much faster to start and set up compared to installing an operating system on a Virtual Machine. A VM needs its own guest operating system, which takes more time and resources to install and boot. In this activity, I learned that a Docker container can start within seconds because it shares the host operating system. This makes containers more convenient for quickly deploying applications.
+
+Port mapping is important because it allows us to access a service running inside a container from the host machine. In the command `-p 8080:80`, port 8080 is the port used on the host, while port 80 is where the Nginx web server runs inside the container. Without port mapping, accessing the Nginx server from the host would not work in the same way. It creates a connection between the host and the container.
+
+When I use the `docker rm` command, the container is completely removed, including data stored only inside its writable container layer. However, the Docker image used to create the container is not deleted. I learned that important data should not be stored only inside a container. Docker volumes or other persistent storage should be used if the data needs to remain after the container is removed.
+
+Containerization can improve how developers and IT operations teams work together through DevOps. Developers can package an application with its required dependencies into a container, while the operations team can deploy the same container in different environments. This can reduce problems caused by differences between development and production environments and make deployment more consistent.
+
+My GitHub portfolio is evolving because each laboratory activity adds more examples of the technical skills I am learning. This mission adds Docker, container deployment, Nginx, Linux commands, and technical documentation to my portfolio. It also shows my progress from learning basic cloud concepts to actually deploying and managing containerized applications. My repository is becoming a useful record of my experience and development as an IT student.
